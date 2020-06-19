@@ -1,0 +1,80 @@
+﻿<script src="~/js/Login.js"></script>
+@{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<div class="RegisterBlock">
+    <fieldset class="register">
+        <legend class="RegisterTitle">Register</legend>
+        <ul>
+            <li>
+                @Html.Label("lblUserEmail","Email:",new {id="lblUserEmail"})
+            </li>
+            <li>
+                @Html.TextBox("txtUserEmail", "", new { ID = "txtUserEmail", @class = "TextBox UserEmailTextBox" })
+            </li>
+            <li>
+                Password:
+            </li>
+            <li>
+                @Html.TextBox("txtPassword", "", new { ID = "txtPassword", @class = "TextBox PasswordTextBox",maxlength="50",@type = "password" })
+            </li>
+            <li>
+                Confirm Password:
+            </li>
+            <li>
+                @Html.TextBox("txtConfirmPassword", "", new { ID = "txtConfirmPassword", @class = "TextBox ConfirmPasswordTextBox", maxlength = "50", @type = "password" })
+            </li>
+            <li>
+                First Name:
+            </li>
+            <li>
+                @Html.TextBox("txtFirstName", "", new { ID = "txtFirstName", @class = "TextBox FirstNameTextBox",maxlength="50" })
+            </li>
+            <li>
+                Last Name:
+            </li>
+            <li>
+                @Html.TextBox("txtLastName", "", new { ID = "txtLastName", @class = "TextBox LastNameTextBox",maxlength="50" })
+            </li>
+            <li>
+            </li>
+			<li><span style="color:red;">
+                @Html.Label("lblErrorMessage"," ", new { id = "lblErrorMessage" })
+                </span>
+			</li>
+        </ul>
+    </fieldset>
+    <div class="buttonbox">
+        <input id="btnSignUp" type="button" value="Sign Up" onclick="CallSignUp();" class="SignUpButton"/>
+    </div>
+</div>
+
+<div id="pnlLogin"class="LoginBlock">
+    <fieldset class="login">
+        <legend class="LoginTitle">Login</legend>
+        <ul>
+            <li>
+                Email: <br />(Enter: info@componentone.com)
+            </li>
+            <li>
+                @Html.TextBox("UserName", "info@componentone.com", new { ID = "UserName", @class = "TextBox LoginEmailTextBox",maxlength="50" })
+            </li>
+            <li>
+                Password: <br />(Enter: pass)
+            </li>
+            <li>
+                @Html.TextBox("Password", "", new { ID = "Password", @class = "TextBox LoginPasswordTextBox", @type = "password", maxlength = "50" })
+            </li>
+            <li>
+                <span style="color:red;">
+                @Html.Label("FailureText"," ",new {id="FailureText"})
+                    </span>
+            </li>
+        </ul>
+    </fieldset>
+    <div class="buttonbox">
+        @Html.CheckBox("RememberMe", true, new { @id = "RememberMe" })Remember Me
+        <input id="LoginButton" type="button" value="Login" onclick="CallLogin();" class="LoginButton"/>
+    </div>
+</div>
+@Html.Hidden("HFReturnURL",(string) @ViewBag.ReturnURL)

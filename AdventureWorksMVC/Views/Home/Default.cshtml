@@ -1,0 +1,12 @@
+﻿<script src="~/js/Default.js"></script>
+@{
+    ViewBag.Title = "Legacy Cycles";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div id="homepage" class="">
+    @ViewBag.ErrMsg
+    <div class="content-mid">
+        @{Html.RenderAction("ContentLayout", "SiteLayout");}
+    </div>
+</div>

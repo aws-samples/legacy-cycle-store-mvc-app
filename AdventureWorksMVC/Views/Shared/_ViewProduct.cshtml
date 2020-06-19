@@ -1,0 +1,79 @@
+﻿<script src="~/js/ViewProduct.js"></script>
+@model AdventureWorks.Models.ProductsModel
+<div class="yui-gf">
+    <div class="yui-u">
+        <div class="MainProductImage">
+            <img id="prodImg" alt="Amazing photo of product!" src='/ProductImage.ashx?ProductID=@Model.ProductID&size=large'/>
+        </div>
+        <div class="ProductDescription">
+            <h1>
+                @Model.ProductName
+            </h1>
+            <div class="ProductPrice">
+                @Model.ProductPrice
+				<input type="button" value="Buy" class="LoginButton" onclick="addToCart();" />
+            </div>
+            @Html.Raw(Model.phSpecsHTML)
+            <div class="DescriptionContainer" style="visibility:@Model.ProductDescVisibility;">
+                @Html.Raw(Model.phModelHTML)
+                @Model.ProductDesc
+            </div>
+        </div>
+    </div>
+    <div class="yui-u first">
+        <div id="C1ExpanderRelated" style="width:100%;">
+            <div>
+                <h3>Related Products</h3>
+            </div>
+            <div>
+                <ul id="C1MenuRelated"></ul>
+            </div>
+            </div>
+
+            <div id="C1ExpanderViewedProduct" style="width:100%;">
+                <div>
+                <h3>Recently Viewed</h3>
+                </div>            
+            <div>
+                <ul id="C1MenuViewedProduct"></ul>
+            </div>
+                </div>
+
+
+            <div id="C1ExpanderStats" style="width:100%;visibility:@Model.ChartVisibility;">            
+                <div>
+                <h3>Overall Stats</h3>
+            </div>
+            <div>
+                @{
+                    if(Model.ChartVisibility=="visible")
+                    {
+                        @Html.Partial("_ChartCategory",new ViewDataDictionary { { "ChartCategory", Model.ChartCategory }})
+                    }
+                }
+                </div>
+            </div>
+            
+	</div>
+</div>
+<div id="C1Dialog">
+			<div class="WindowShoppingCart">
+                <h1 class="ProductMsg">
+                    Added to Cart!
+                </h1>
+                <div class="ProductImage">
+                    <img id="winProdImg" alt="Product"  src='/ProductImage.ashx?ProductID=@Model.ProductID&size=large'/></div>
+                <h2 class="WindowShoppingCartProductName">
+                    @Model.ProductName
+                </h2>
+            </div>
+                <div class="ShoppingBody">
+                    <table id="C1GVShopCart" style="width:550px;"></table>
+		        </div>
+                <br />
+            <div class="ButtonContainer">
+				<input type="button" id="continue" value="Continue Shopping" class="ButtonContinue" onclick="closeDialog();" /><input type="button" id="checkout" value="Checkout" class="ButtonCheckOut" onclick="    Checkout();" />&nbsp;&nbsp;
+            </div>
+		</div>
+        @Html.Hidden("hdProdId",Model.ProductID,new {id="hdProdId"})
+        @Html.Hidden("HFChartVisibility",Model.ChartVisibility,new {id="HFChartVisibility"})

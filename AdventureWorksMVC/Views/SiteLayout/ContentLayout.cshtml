@@ -1,0 +1,28 @@
+﻿@model AdventureWorks.Models.SiteLayoutModel
+@{
+	string categoryNameMenu, categoryNameList;
+}
+<div class="content">
+	<div class="footerinner">
+		<div id="PnlExpFooter">
+			<div>
+				@foreach (var category in Model.ProductCategories)
+				{
+				categoryNameMenu = category.Name + "Menu";
+				categoryNameList = category.Name + "List";
+				<div asp-for="@category.Name" class="@categoryNameMenu" )>
+					<h1>
+						<b>@category.Name</b>
+					</h1>
+					<ul class="@categoryNameList">
+						@foreach (var subCategory in category.ProductSubcategories.ToList())
+						{
+						<li>@subCategory.Name</li>
+						}
+					</ul>
+				</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>
