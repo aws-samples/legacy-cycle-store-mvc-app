@@ -224,25 +224,10 @@
     <Content Include="Views\SiteLayout\HeaderLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SiteLayout\FooterLayout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\Default.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Products\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_ViewProduct.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\ShoppingCart\OpenCart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon\manifest.json" />
@@ -254,12 +239,8 @@
       <DependentUpon>CycleModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\AdventureWorks-MVC.pubxml" />
-    <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
-    <Content Include="Views\ShoppingCart\Shipping.cshtml" />
-    <Content Include="Views\ShoppingCart\ReviewOrder.cshtml" />
-    <Content Include="Views\ShoppingCart\OrderComplete.cshtml" />
-    <Content Include="Views\Home\Logout.cshtml" />
     <Content Include="Views\Error\Default.cshtml" />
+    <Content Include="Views\SiteLayout\ContentLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
