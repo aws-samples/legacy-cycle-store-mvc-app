@@ -189,20 +189,7 @@
     <Content Include="favicon\favicon-32x32.png" />
     <Content Include="favicon\safari-pinned-tab.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\accept.gif" />
-    <Content Include="Images\awc_logo.png" />
-    <Content Include="Images\c1a2logo.png" />
-    <Content Include="Images\c1wijmologo.png" />
-    <Content Include="Images\cancel.gif" />
-    <Content Include="Images\delete.gif" />
-    <Content Include="Images\edit.gif" />
-    <Content Include="Images\editing.gif" />
-    <Content Include="Images\filter.gif" />
-    <Content Include="Images\loading_blue.gif" />
-    <Content Include="Images\minus.png" />
-    <Content Include="Images\plus.png" />
-    <Content Include="Images\sprocket.gif" />
-    <Content Include="Images\superlight_silver_small.gif" />
+    <Content Include="Images\logo.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
