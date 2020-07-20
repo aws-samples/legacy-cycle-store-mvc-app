@@ -162,8 +162,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\WebResource.cs" />
-    <Compile Include="Models\ReviewOrderModel.cs" />
-    <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\SiteLayoutModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
